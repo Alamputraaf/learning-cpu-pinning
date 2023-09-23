@@ -33,3 +33,12 @@
 
   <!-- Other VM configuration settings here -->
 </domain>
+<vcpu placement='static'>10</vcpu> <!-- Allocate 10 vCPUs to the VM -->
+<cputune>
+    <vcpupin vcpu='0' cpuset='0-1'/> <!-- Pin vCPUs 0-1 to cores 0 and 1 -->
+    <vcpupin vcpu='1' cpuset='2-3'/> <!-- Pin vCPUs 2-3 to cores 2 and 3 -->
+    <vcpupin vcpu='2' cpuset='4-5'/> <!-- Pin vCPUs 4-5 to cores 4 and 5 -->
+    <vcpupin vcpu='3' cpuset='6-7'/> <!-- Pin vCPUs 6-7 to cores 6 and 7 -->
+    <vcpupin vcpu='4' cpuset='8-9'/> <!-- Pin vCPUs 8-9 to cores 8 and 9 -->
+    <!-- Add more vcpupin entries if needed -->
+</cputune>
