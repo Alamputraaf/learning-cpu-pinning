@@ -1,0 +1,35 @@
+<domain type='kvm'>
+  <!-- Other VM configuration settings here -->
+
+  <vcpu placement='static'>10</vcpu> <!-- Allocate 10 CPUs to the VM -->
+
+  <!-- Set the emulatorpin for the emulator process -->
+  <cputune>
+    <emulatorpin cpuset='0-1'/> <!-- Pin emulator to cores 0 and 1 -->
+  </cputune>
+
+  <!-- Define iothreads for disk and network -->
+  <iothreads>2</iothreads>
+
+  <!-- Pin iothreads to specific CPU cores -->
+  <cputune>
+    <iothreadpin iothread='1' cpuset='2-3'/> <!-- Pin iothread 1 to cores 2 and 3 -->
+    <iothreadpin iothread='2' cpuset='4-5'/> <!-- Pin iothread 2 to cores 4 and 5 -->
+  </cputune>
+
+  <!-- Define vCPUs and pin them to specific CPU cores -->
+  <cputune>
+    <vcpupin vcpu='0' cpuset='6'/> <!-- Pin vCPU 0 to core 6 -->
+    <vcpupin vcpu='1' cpuset='7'/> <!-- Pin vCPU 1 to core 7 -->
+    <vcpupin vcpu='2' cpuset='8'/> <!-- Pin vCPU 2 to core 8 -->
+    <vcpupin vcpu='3' cpuset='9'/> <!-- Pin vCPU 3 to core 9 -->
+    <vcpupin vcpu='4' cpuset='10'/> <!-- Pin vCPU 4 to core 10 -->
+    <vcpupin vcpu='5' cpuset='11'/> <!-- Pin vCPU 5 to core 11 -->
+    <vcpupin vcpu='6' cpuset='12'/> <!-- Pin vCPU 6 to core 12 -->
+    <vcpupin vcpu='7' cpuset='13'/> <!-- Pin vCPU 7 to core 13 -->
+    <vcpupin vcpu='8' cpuset='14'/> <!-- Pin vCPU 8 to core 14 -->
+    <vcpupin vcpu='9' cpuset='15'/> <!-- Pin vCPU 9 to core 15 -->
+  </cputune>
+
+  <!-- Other VM configuration settings here -->
+</domain>
